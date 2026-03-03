@@ -1,0 +1,66 @@
+.hero {
+  padding: 160px 20px 120px;
+  background: #f7f9fc;
+}
+
+.hero-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 48px;
+  line-height: 1.4;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.hero p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.primary {
+  padding: 14px 28px;
+  background: #00c4cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.secondary {
+  padding: 14px 28px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.primary:hover {
+  opacity: 0.8;
+}
+
+.secondary:hover {
+  background: #f0f0f0;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+}

@@ -1,12 +1,19 @@
 .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  z-index: 1000;
+  border-bottom: 1px solid #eee;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  background: white;
-  position: fixed;
-  width: 100%;
-  top: 0;
 }
 
 .logo {
@@ -16,10 +23,56 @@
 
 .nav ul {
   display: flex;
-  gap: 24px;
+  gap: 32px;
   list-style: none;
 }
 
 .nav li {
   cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.nav li:hover {
+  opacity: 0.6;
+}
+
+/* ハンバーガー */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: black;
+  transition: 0.3s;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: white;
+    width: 100%;
+    transform: translateY(-200%);
+    transition: 0.3s;
+  }
+
+  .nav.open {
+    transform: translateY(0);
+  }
+
+  .nav ul {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
 }
