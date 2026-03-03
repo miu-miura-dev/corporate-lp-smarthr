@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nav ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.nav li {
+  cursor: pointer;
+}
