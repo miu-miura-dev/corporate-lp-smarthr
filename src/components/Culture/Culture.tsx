@@ -2,8 +2,8 @@ import "./Culture.css";
 
 const Culture = () => {
   return (
-    <section className="culture">
-      <div className="culture-container">
+    <section id="culture" className="culture">
+      <div className="container culture-container">
         <h2>Culture</h2>
         <p className="culture-description">
           私たちが大切にしている価値観と働き方。

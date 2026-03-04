@@ -3,7 +3,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-container">
+      <div className="container footer-container">
         <div className="footer-top">
           <div className="footer-brand">
             <h3>HR Cloud</h3>
@@ -11,11 +11,11 @@ const Footer = () => {
           </div>
 
           <div className="footer-links">
-            <a href="#">Message</a>
-            <a href="#">Culture</a>
-            <a href="#">Benefits</a>
-            <a href="#">FAQ</a>
-            <a href="#">Contact</a>
+            <a href="#message">Message</a>
+            <a href="#culture">Culture</a>
+            <a href="#benefits">Benefits</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
           </div>
 
           <div className="footer-social">

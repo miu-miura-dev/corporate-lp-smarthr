@@ -1,0 +1,17 @@
+.btn {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+.primary {
+  background: #00c4cc;
+  color: #fff;
+}
+
+.secondary {
+  background: #fff;
+  border: 1px solid #ccc;
+}

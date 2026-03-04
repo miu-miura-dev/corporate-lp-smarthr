@@ -2,7 +2,7 @@ import "./Message.css";
 
 const Message = () => {
   return (
-    <section className="message">
+    <section id="message" className="message">
       <div className="container">
         <h2>Message</h2>
         <p>代表メッセージが入ります。</p>

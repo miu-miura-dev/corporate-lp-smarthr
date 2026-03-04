@@ -1,5 +1,9 @@
 import { useState } from "react";
+import { sendContact } from "../../api/contact";
 import "./Contact.css";
+import Button from "../common/Button";
+
+
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -8,11 +12,8 @@ const Contact = () => {
     message: "",
   });
 
-  const [errors, setErrors] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -20,84 +21,54 @@ const Contact = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const validate = () => {
-    let newErrors = { name: "", email: "", message: "" };
-    let isValid = true;
-
-    if (!form.name) {
-      newErrors.name = "名前を入力してください";
-      isValid = false;
-    }
-
-    if (!form.email) {
-      newErrors.email = "メールアドレスを入力してください";
-      isValid = false;
-    } else if (!/\S+@\S+\.\S+/.test(form.email)) {
-      newErrors.email = "正しいメールアドレス形式で入力してください";
-      isValid = false;
-    }
-
-    if (!form.message) {
-      newErrors.message = "メッセージを入力してください";
-      isValid = false;
-    }
-
-    setErrors(newErrors);
-    return isValid;
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (validate()) {
-      alert("送信しました（ダミー）");
-      setForm({ name: "", email: "", message: "" });
-    }
+    setLoading(true);
+
+    await sendContact(form);
+
+    setLoading(false);
+    setSuccess(true);
+
+    setForm({ name: "", email: "", message: "" });
   };
 
   return (
-    <section className="contact">
-      <div className="contact-container">
-        <h2>Contact</h2>
+    <section id="contact" className="contact">
+      <h2>Contact</h2>
 
-        <form onSubmit={handleSubmit} className="contact-form">
-          <div className="form-group">
-            <label>名前</label>
-            <input
-              type="text"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-            />
-            {errors.name && <p className="error">{errors.name}</p>}
-          </div>
+      <form onSubmit={handleSubmit}>
+        <label>名前</label>
+        <input
+          name="name"
+          value={form.name}
+          onChange={handleChange}
+          required
+        />
 
-          <div className="form-group">
-            <label>メールアドレス</label>
-            <input
-              type="text"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-            />
-            {errors.email && <p className="error">{errors.email}</p>}
-          </div>
+        <label>メールアドレス</label>
+        <input
+          name="email"
+          type="email"
+          value={form.email}
+          onChange={handleChange}
+          required
+        />
 
-          <div className="form-group">
-            <label>メッセージ</label>
-            <textarea
-              name="message"
-              rows={5}
-              value={form.message}
-              onChange={handleChange}
-            />
-            {errors.message && <p className="error">{errors.message}</p>}
-          </div>
+        <label>メッセージ</label>
+        <textarea
+          name="message"
+          value={form.message}
+          onChange={handleChange}
+          required
+        />
 
-          <button type="submit" className="submit-btn">
-            送信する
-          </button>
-        </form>
-      </div>
+        <Button type="submit">
+          {loading ? "送信中..." : "送信する"}
+        </Button>
+      </form>
+
+      {success && <p>送信が完了しました！</p>}
     </section>
   );
 };

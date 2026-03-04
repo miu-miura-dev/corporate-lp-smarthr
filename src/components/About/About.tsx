@@ -1,9 +1,10 @@
 import "./About.css";
+import aboutImage from "../../assets/About.jpg";
 
 const About = () => {
   return (
     <section className="about">
-      <div className="about-container">
+      <div className="container about-container">
         <div className="about-text">
           <h2>About Us</h2>
           <p>
@@ -16,8 +17,10 @@ const About = () => {
           </p>
         </div>
 
+                
+
         <div className="about-image">
-          <div className="dummy-image">Image</div>
+          <img src={aboutImage} alt="about" />
         </div>
       </div>
     </section>

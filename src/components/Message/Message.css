@@ -2,7 +2,4 @@
   padding: 100px 20px;
 }
 
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
+/* container styles moved to globals.css */

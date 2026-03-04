@@ -2,8 +2,8 @@ import "./Benefits.css";
 
 const Benefits = () => {
   return (
-    <section className="benefits">
-      <div className="benefits-container">
+    <section id="benefits" className="benefits">
+      <div className="container benefits-container">
         <h2>Benefits</h2>
         <p className="benefits-description">
           働きやすさを支える制度や環境を整えています。

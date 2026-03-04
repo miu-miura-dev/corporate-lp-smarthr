@@ -8,6 +8,7 @@ import Header from "../components/Header/Header";
 import Hero from "../components/Hero/Hero";
 import Message from "../components/Message/Message";
 
+
 const Home = () => {
   return (
     <>

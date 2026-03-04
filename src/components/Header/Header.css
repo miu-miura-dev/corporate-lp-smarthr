@@ -1,78 +1,56 @@
 .header {
-  position: fixed;
-  top: 0;
   width: 100%;
   background: white;
-  z-index: 1000;
-  border-bottom: 1px solid #eee;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
-.header-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 40px;
+.header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo {
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.nav ul {
+.nav {
   display: flex;
-  gap: 32px;
-  list-style: none;
+  gap: 24px;
 }
 
-.nav li {
-  cursor: pointer;
-  transition: opacity 0.3s ease;
+.nav a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
 }
 
-.nav li:hover {
-  opacity: 0.6;
-}
-
-/* ハンバーガー */
 .hamburger {
   display: none;
-  flex-direction: column;
-  gap: 6px;
+  font-size: 24px;
+  background: none;
+  border: none;
   cursor: pointer;
-}
-
-.hamburger span {
-  width: 24px;
-  height: 2px;
-  background: black;
-  transition: 0.3s;
 }
 
 /* レスポンシブ */
 @media (max-width: 768px) {
   .nav {
     position: absolute;
-    top: 80px;
+    top: 70px;
     right: 0;
     background: white;
-    width: 100%;
-    transform: translateY(-200%);
-    transition: 0.3s;
+    flex-direction: column;
+    padding: 20px;
+    display: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   }
 
   .nav.open {
-    transform: translateY(0);
-  }
-
-  .nav ul {
-    flex-direction: column;
-    padding: 20px;
+    display: flex;
   }
 
   .hamburger {
-    display: flex;
+    display: block;
   }
 }

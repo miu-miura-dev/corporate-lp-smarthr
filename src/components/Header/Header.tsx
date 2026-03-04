@@ -6,27 +6,23 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="header-container">
+      <div className="container header-inner">
         <div className="logo">SmartHR Recruit</div>
 
         <nav className={`nav ${isOpen ? "open" : ""}`}>
-          <ul>
-            <li>Message</li>
-            <li>Culture</li>
-            <li>Benefits</li>
-            <li>FAQ</li>
-            <li>Contact</li>
-          </ul>
+          <a href="#message">Message</a>
+          <a href="#culture">Culture</a>
+          <a href="#benefits">Benefits</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
         </nav>
 
-        <div
-          className={`hamburger ${isOpen ? "active" : ""}`}
+        <button
+          className="hamburger"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <span />
-          <span />
-          <span />
-        </div>
+          ☰
+        </button>
       </div>
     </header>
   );
