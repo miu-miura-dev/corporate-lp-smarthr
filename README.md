@@ -1,73 +1,67 @@
-# React + TypeScript + Vite
+# Corporate LP (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🔗 Demo
+https://corporate-lp-smarthr.vercel.app/
 
-Currently, two official plugins are available:
+## 📂 GitHub
+https://github.com/miu-miura-dev/corporate-lp-smarthr
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 📝 概要
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+React（Vite + TypeScript）を使用して、
+コーポレート採用LPを制作しました。
 
-## Expanding the ESLint configuration
+Figmaデザインを想定し、
+コンポーネント設計・レスポンシブ対応・フォーム制御まで実装しています。
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🎯 制作目的
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Figma → React実装力の証明
+- コンポーネント設計力のアピール
+- フォーム制御・状態管理の実装
+- API分離構成の練習
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠 使用技術
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- React
+- TypeScript
+- Vite
+- CSS
+- useState
+- mock API（非同期処理）
+- コンポーネント分割設計
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 💡 実装ポイント
+
+- 各セクションをコンポーネント単位で分割
+- 再利用可能なButtonコンポーネント作成
+- ハンバーガーメニュー（useState制御）
+- フォームバリデーション
+- 非同期mock API実装
+- レスポンシブ対応（768px以下）
+
+---
+
+## 📌 工夫した点
+
+- UIの共通化（Button）
+- APIロジックを`api/`ディレクトリに分離
+- hooksを使用した状態管理
+- モバイル表示でのナビゲーション制御
+
+---
+
+## 🚀 今後の改善点
+
+- 実API接続
+- テストコード追加
+- アニメーション追加
+- UIデザインのブラッシュアップ
